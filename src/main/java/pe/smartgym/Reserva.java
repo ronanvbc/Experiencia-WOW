@@ -5,19 +5,19 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Reserva {
-    private static int totalReservas = 0; // contador global
+    private static int totalReservas = 0; 
     private final int id;
     private Cliente cliente;
     private Entrenador entrenador;
-    private Horario horario;   // clase anidada
-    private String comentario; // opcional
+    private Horario horario;   
+    private String comentario; 
 
-    // Constructor base (sin comentario)
+    
     public Reserva(Cliente cliente, Entrenador entrenador, LocalDate fecha, LocalTime hora) {
         this(cliente, entrenador, fecha, hora, null);
     }
 
-    // Constructor sobrecargado (con comentario)
+    
     public Reserva(Cliente cliente, Entrenador entrenador, LocalDate fecha, LocalTime hora, String comentario) {
         this.id = ++totalReservas;
         this.cliente = cliente;
@@ -26,7 +26,6 @@ public class Reserva {
         this.comentario = comentario;
     }
 
-    // Clase anidada
     public static class Horario {
         private LocalDate fecha;
         private LocalTime hora;
